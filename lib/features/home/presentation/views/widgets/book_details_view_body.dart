@@ -2,6 +2,7 @@ import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.
 import 'package:bookly_app/features/home/presentation/views/widgets/books_action.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_details_app_bar.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_item.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/similar_books_list_view.dart';
 import 'package:flutter/material.dart';
 import '../../../../../core/utils/styles.dart';
 
@@ -13,8 +14,8 @@ class BookDetailsViewBody extends StatelessWidget {
     var width = MediaQuery.of(context).size.width;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
+      child: ListView(
+        // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const CustomBookDetailsAppBar(),
           Padding(
@@ -24,20 +25,26 @@ class BookDetailsViewBody extends StatelessWidget {
             child: const CustomBookImage(),
           ),
           const SizedBox(height: 35),
-          Text(
-            'The Alchemist',
-            style: Styles.textStyle30.copyWith(
-              fontWeight: FontWeight.bold,
+          Align(
+            alignment: Alignment.center,
+            child: Text(
+              'The Alchemist',
+              style: Styles.textStyle30.copyWith(
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
           const SizedBox(height: 6),
           Opacity(
             opacity: 0.7,
-            child: Text(
-              ' Paulo Coelho',
-              style: Styles.textStyle18.copyWith(
-                fontStyle: FontStyle.italic,
-                fontWeight: FontWeight.w500,
+            child: Align(
+              alignment: Alignment.center,
+              child: Text(
+                ' Paulo Coelho',
+                style: Styles.textStyle18.copyWith(
+                  fontStyle: FontStyle.italic,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             ),
           ),
@@ -47,6 +54,19 @@ class BookDetailsViewBody extends StatelessWidget {
           ),
           const SizedBox(height: 30),
           const BooksAction(),
+          const SizedBox(height: 40),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              'You can also like',
+              style: Styles.textStyle18.copyWith(
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
+          const SizedBox(height: 16),
+          const SimilarBooksListView(),
+          const SizedBox(height: 40),
         ],
       ),
     );
