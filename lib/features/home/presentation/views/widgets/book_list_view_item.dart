@@ -5,8 +5,8 @@ import 'package:go_router/go_router.dart';
 import '../../../../../constants.dart';
 import '../../../../../core/utils/styles.dart';
 
-class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key});
+class BookListViewItem extends StatelessWidget {
+  const BookListViewItem({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -70,7 +70,7 @@ class BestSellerListViewItem extends StatelessWidget {
                     children: [
                       Text(
                         '19.99 \$ ',
-                        style: Styles.textStyle20.copyWith(
+                        style: Styles.textStyle18.copyWith(
                           fontWeight: FontWeight.bold,
                         ),
                       ),
