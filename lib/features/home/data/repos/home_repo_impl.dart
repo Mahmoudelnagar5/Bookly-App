@@ -40,8 +40,7 @@ class HomeRepoImpl implements HomeRepo {
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
     try {
       Map<String, dynamic> jsonData = await apiServices.get(
-        endPoint:
-            'volumes?q=subject:Programming&Sorting=Relevance&filtering=free-ebooks',
+        endPoint: 'volumes?q=subject:flutter&filtering=free-ebooks',
       );
       List<BookModel> books = [];
       for (var item in jsonData['items']) {

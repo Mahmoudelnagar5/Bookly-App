@@ -23,9 +23,9 @@ class FeaturedBooksListView extends StatelessWidget {
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8),
                   child: CustomBookImage(
-                    imageUrl: state
-                            .books[index].volumeInfo?.imageLinks?.thumbnail ??
-                        'https://fifpro.org/media/fhmfhvkx/messi-world-cup.jpg?center=0.31512414378031967',
+                    imageUrl:
+                        state.books[index].volumeInfo?.imageLinks?.thumbnail ??
+                            '',
                   ),
                 );
               },
