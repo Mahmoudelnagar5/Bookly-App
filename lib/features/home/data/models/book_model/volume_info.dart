@@ -8,6 +8,7 @@ import 'reading_modes.dart';
 class VolumeInfo extends Equatable {
   final String? title;
   final List<String>? authors;
+  final String? publisher;
   final String? publishedDate;
   final String? description;
   final List<IndustryIdentifier>? industryIdentifiers;
@@ -28,10 +29,9 @@ class VolumeInfo extends Equatable {
   final String? canonicalVolumeLink;
 
   const VolumeInfo({
-    this.averageRating,
-    this.ratingsCount,
     this.title,
     this.authors,
+    this.publisher,
     this.publishedDate,
     this.description,
     this.industryIdentifiers,
@@ -39,11 +39,13 @@ class VolumeInfo extends Equatable {
     this.pageCount,
     this.printType,
     this.categories,
+    this.averageRating,
+    this.ratingsCount,
     this.maturityRating,
     this.allowAnonLogging,
     this.contentVersion,
     this.panelizationSummary,
-    this.imageLinks,
+    required this.imageLinks,
     this.language,
     this.previewLink,
     this.infoLink,
@@ -53,6 +55,7 @@ class VolumeInfo extends Equatable {
   factory VolumeInfo.fromJson(Map<String, dynamic> json) => VolumeInfo(
         title: json['title'] as String?,
         authors: (json['authors'] as List<dynamic>?)?.cast<String>(),
+        publisher: json['publisher'] as String?,
         publishedDate: json['publishedDate'] as String?,
         description: json['description'] as String?,
         industryIdentifiers: (json['industryIdentifiers'] as List<dynamic>?)
@@ -86,6 +89,7 @@ class VolumeInfo extends Equatable {
   Map<String, dynamic> toJson() => {
         'title': title,
         'authors': authors,
+        'publisher': publisher,
         'publishedDate': publishedDate,
         'description': description,
         'industryIdentifiers':
@@ -94,6 +98,8 @@ class VolumeInfo extends Equatable {
         'pageCount': pageCount,
         'printType': printType,
         'categories': categories,
+        'averageRating': averageRating,
+        'ratingsCount': ratingsCount,
         'maturityRating': maturityRating,
         'allowAnonLogging': allowAnonLogging,
         'contentVersion': contentVersion,
@@ -110,6 +116,7 @@ class VolumeInfo extends Equatable {
     return [
       title,
       authors,
+      publisher,
       publishedDate,
       description,
       industryIdentifiers,
@@ -117,6 +124,8 @@ class VolumeInfo extends Equatable {
       pageCount,
       printType,
       categories,
+      averageRating,
+      ratingsCount,
       maturityRating,
       allowAnonLogging,
       contentVersion,

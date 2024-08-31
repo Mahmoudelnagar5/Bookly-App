@@ -21,7 +21,7 @@ class BookListViewItem extends StatelessWidget {
         child: Row(
           children: [
             CustomBookImage(
-              imageUrl: book.volumeInfo?.imageLinks?.thumbnail ?? '',
+              imageUrl: book.volumeInfo.imageLinks?.thumbnail ?? '',
             ),
             const SizedBox(width: 30),
             Expanded(
@@ -31,7 +31,7 @@ class BookListViewItem extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.5,
                     child: Text(
-                      book.volumeInfo?.title ?? '',
+                      book.volumeInfo.title ?? '',
                       style: Styles.textStyle20.copyWith(
                         fontFamily: kGtSectraFine,
                         fontWeight: FontWeight.w600,
@@ -43,11 +43,15 @@ class BookListViewItem extends StatelessWidget {
                   const SizedBox(height: 3),
                   Opacity(
                     opacity: 0.7,
-                    child: Text(
-                      book.volumeInfo?.authors?[0] ?? '',
-                      style: Styles.textStyle18.copyWith(
-                        // fontStyle: FontStyle.italic,
-                        fontWeight: FontWeight.w500,
+                    child: SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.4,
+                      child: Text(
+                        book.volumeInfo.authors?[0] ?? '',
+                        style: Styles.textStyle14.copyWith(
+                          fontWeight: FontWeight.w600,
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
                   ),
@@ -62,8 +66,8 @@ class BookListViewItem extends StatelessWidget {
                         ),
                       ),
                       BookRating(
-                        rating: book.volumeInfo?.averageRating ?? 0,
-                        ratingCount: book.volumeInfo?.ratingsCount ?? 0,
+                        rating: book.volumeInfo.averageRating ?? 4.5,
+                        ratingCount: book.volumeInfo.ratingsCount ?? 255,
                       ),
                     ],
                   )
