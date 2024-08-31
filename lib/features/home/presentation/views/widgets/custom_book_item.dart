@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CustomBookImage extends StatelessWidget {
-  const CustomBookImage({super.key});
-
+  const CustomBookImage({
+    super.key,
+  });
+  // final BookModel book;
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
