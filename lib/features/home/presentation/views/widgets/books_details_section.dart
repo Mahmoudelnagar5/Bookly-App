@@ -17,7 +17,10 @@ class BooksDetailsSection extends StatelessWidget {
           padding: EdgeInsets.symmetric(
             horizontal: width * 0.2,
           ),
-          child: const CustomBookImage(),
+          child: const CustomBookImage(
+            imageUrl:
+                'https://fifpro.org/media/fhmfhvkx/messi-world-cup.jpg?center=0.31512414378031967',
+          ),
         ),
         const SizedBox(height: 35),
         Text(

@@ -1,6 +1,5 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../../data/models/book_model/book_model.dart';
 import '../../../data/repos/home_repo.dart';
 
@@ -14,9 +13,11 @@ class FeaturedBooksCubit extends Cubit<FeaturedBooksState> {
     var result = await homeRepo.fetchFeaturedBooks();
     result.fold(
       (failure) {
-        emit(FeaturedBooksFailure(
-          failure.errMessage,
-        ));
+        emit(
+          FeaturedBooksFailure(
+            failure.errMessage,
+          ),
+        );
       },
       (books) {
         emit(FeaturedBooksSuccess(books));

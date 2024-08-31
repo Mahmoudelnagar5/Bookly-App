@@ -18,11 +18,15 @@ class FeaturedBooksListView extends StatelessWidget {
             height: MediaQuery.of(context).size.height * 0.3,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: 10,
+              itemCount: state.books.length,
               itemBuilder: (context, index) {
-                return const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8),
-                  child: CustomBookImage(),
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  child: CustomBookImage(
+                    imageUrl: state
+                            .books[index].volumeInfo?.imageLinks?.thumbnail ??
+                        'https://fifpro.org/media/fhmfhvkx/messi-world-cup.jpg?center=0.31512414378031967',
+                  ),
                 );
               },
             ),
