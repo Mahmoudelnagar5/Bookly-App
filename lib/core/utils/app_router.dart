@@ -31,7 +31,7 @@ abstract class AppRouter {
             getIt.get<HomeRepoImpl>(),
           ),
           child: BookDetailsView(
-            bookModel: state.extra as BookModel,
+            bookModel: state.extra! as BookModel,
           ),
         ),
       ),

@@ -22,11 +22,12 @@ class SimilarBooksListView extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemCount: state.books.length,
               itemBuilder: (context, index) {
-                return const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 5),
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 5),
                   child: CustomBookImage(
                     imageUrl:
-                        'https://fifpro.org/media/fhmfhvkx/messi-world-cup.jpg?center=0.31512414378031967',
+                        state.books[index].volumeInfo?.imageLinks?.thumbnail ??
+                            '',
                   ),
                 );
               },
